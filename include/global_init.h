@@ -19,8 +19,10 @@
 #define SEQUENCE_TIME       10000   // Anzeigedauer in ms
 #define NEW_PART_DELAY      4000    // Dauer bis ein neues Teil losfligt in ms
 
-#define DDB_COUNT           8       // Anzahl der DigiDotBooster Module
+// Anzahl der DDB-Module
+#define DDB_COUNT           1       // Anzahl der DigiDotBooster Module
 
+// CS-Pin der DDB-Module
 #define DDB_1_CS_PIN        2       // Chip Select Pin DDB 1
 #define DDB_2_CS_PIN        3       // Chip Select Pin DDB 2
 #define DDB_3_CS_PIN        4       // Chip Select Pin DDB 3
@@ -34,6 +36,7 @@
 
 #define ARDUINOLED			13    	// Arduino LED on board
 
+// LEDs am DDB-Modul
 #define DDB_1_MAX_LED      240      // Anzahl der LEDs am DDB 1
 #define DDB_2_MAX_LED      240      // Anzahl der LEDs am DDB 2
 #define DDB_3_MAX_LED      240      // Anzahl der LEDs am DDB 3

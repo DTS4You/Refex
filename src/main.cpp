@@ -58,8 +58,7 @@ RBD::Timer new_scrap_part_timer;
 RBD::ButtonExtern button_1(0);
 
 // LED Segmente Objekte anlegen
-Ledsegment track[24];
-Ledsegment radar[4];
+Ledsegment stripe[1];
 
 // ----------------------------------------------------------------------------
 // Setup
@@ -106,7 +105,7 @@ void setup() {
 	new_scrap_part_timer.stop();
 
 	led_setup();
-	collision_setup();
+	// collision_setup();
 	
 	ddb_refresh = true;
 	//-------------------------------------------------------------------------
