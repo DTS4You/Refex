@@ -1,5 +1,6 @@
-Timer
+###############################################################################
+### Dokumentation                                                           ###
+###############################################################################
 
-1. Timer -> Animation Radar vertikal -> Step
-2. Timer -> Neues Teil auf einer Bahn starten -> Ramdom Wert generieren
+
  
