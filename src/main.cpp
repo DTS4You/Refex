@@ -34,8 +34,8 @@
 #include "led_setup.h"
 // #include "collision_setup.h"
 
-const uint8_t ddb_cs_pin[DDB_COUNT] 	= { DDB_1_CS_PIN, DDB_2_CS_PIN, DDB_3_CS_PIN, DDB_4_CS_PIN, DDB_5_CS_PIN, DDB_6_CS_PIN, DDB_7_CS_PIN, DDB_8_CS_PIN};
-const uint8_t ddb_num_led[DDB_COUNT]	= { DDB_1_MAX_LED, DDB_2_MAX_LED, DDB_3_MAX_LED, DDB_4_MAX_LED, DDB_5_MAX_LED, DDB_6_MAX_LED, DDB_7_MAX_LED, DDB_8_MAX_LED };
+const uint8_t ddb_cs_pin[DDB_COUNT] 	= { DDB_1_CS_PIN };
+const uint8_t ddb_num_led[DDB_COUNT]	= { DDB_1_MAX_LED };
 bool ddb_refresh = false;
 
 //uint8_t	global_input	= 0;	 // Wird im Objekt ButtonExtern erzeugt
