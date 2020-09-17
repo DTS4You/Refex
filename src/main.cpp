@@ -45,7 +45,7 @@ uint8_t state_value		= 0;
 uint8_t animation_state	= 0;
 
 // Digi-Dot-Booster Objekte erzeugen
-DDBooster led_stripe[DDB_COUNT];			// Objekt anlegen
+DDBooster ddb_leds[DDB_COUNT];			// Objekt anlegen
 
 // Timer Objekte anlegen
 RBD::Timer io_task;
@@ -77,14 +77,14 @@ void setup() {
 	for (uint8_t i = 0; i < DDB_COUNT; i++)
 	{
 		// Digi-Dot-Booster CS-Pin konfigurieren
-		led_stripe[i].configurePins(ddb_cs_pin[i]);
+		ddb_leds[i].configurePins(ddb_cs_pin[i]);
 		delay(DDB_INIT_DELAY);
 		// Digi-Dot-Booster -> Anzahl der LEDs pro Digi-Dot-Booster
-		led_stripe[i].init(ddb_num_led[i]);
+		ddb_leds[i].init(ddb_num_led[i]);
 		delay(DDB_INIT_DELAY);
-		led_stripe[i].clearAll();
+		ddb_leds[i].clearAll();
 		delay(DDB_INIT_DELAY);
-		led_stripe[i].show();
+		ddb_leds[i].show();
 		delay(DDB_INIT_DELAY);
 	}
 
@@ -177,7 +177,7 @@ void loop() {
 		delay(DDB_INIT_DELAY);			// Workaround for DDB SPI Problem
 		for (uint8_t i = 0; i < DDB_COUNT; i++)
 		{
-			led_stripe[i].show();
+			ddb_leds[i].show();
 			delay(DDB_INIT_DELAY);		// Workaround for DDB SPI Problem
 		}
 		ddb_refresh = false;

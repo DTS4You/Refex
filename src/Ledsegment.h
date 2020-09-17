@@ -21,7 +21,6 @@ class Ledsegment
 		void setRunLeft();
 		void setRunRight();
 		void setRunToggleOn();
-		void setCollision(uint8_t, uint8_t, uint8_t);
 		uint8_t getPosition();
 
     protected:
@@ -32,9 +31,6 @@ class Ledsegment
 		uint8_t _begin;
 		uint8_t _step;
 		uint8_t	_pos;
-		uint8_t _collision_h1;
-		uint8_t _collision_h2;
-		uint8_t _collision_v;
 		uint8_t _color_off;
 		uint8_t _color_def;
 		uint8_t _color_on;

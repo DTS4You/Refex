@@ -4,8 +4,7 @@
 #include "stripe_init.h"
 
 
-extern class Ledsegment track[];
-extern class Ledsegment radar[];
+extern class Ledsegment stripe[];
 extern class RBD::Timer sequence_timer; 
 extern uint8_t animation_state;
 extern bool anim_flag;
@@ -18,7 +17,7 @@ extern uint8_t state_value;
 void animation_step() {
 	// Radarstrahlen von unten nach oben, bei Kollision zurück nach unten.
 	for(uint8_t i=0; i<4; i++) {
-		radar[i].stepUp();
+		stripe[i].stepUp();
 	}
 	
 }

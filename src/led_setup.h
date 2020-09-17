@@ -8,23 +8,17 @@
 #include "Ledsegment.h"
 
 
-extern class Ledsegment stipe[];
+extern class Ledsegment stripe[];
 
 void led_setup() {
+
 	// Segmente definieren
 	stripe[0].setup(STRIPE_01_DDB, STRIPE_01_START, STRIPE_01_NUM);
 
-    for (uint8_t i=0; i<1; i++) {
-		stripe[i].setColorDef(F_LED_DEF);
-	}
+	stripe[0].setColorDef(F_LED_DEF);
 
-	//-------------------------------------------------------------------------
-	// Grundeinstellungen LED Stripes
-	//-------------------------------------------------------------------------
-
-	for (uint8_t i=0; i<1; i++) {
-		stripe[i].showRange(F_LED_DEF);
-	}
+	stripe[0].showRange(F_LED_DEF);
+	
 }
 
 #endif

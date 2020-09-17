@@ -6,7 +6,7 @@
 
 #include "color_tables.h"
 
-extern class DDBooster led_stripe[];
+extern class DDBooster ddb_leds[];
 
 extern uint8_t color[];
 
@@ -16,9 +16,6 @@ Ledsegment::Ledsegment() {
 	_begin 				= 0;
 	_step 				= 0;
 	_pos				= 0;
-	_collision_h1		= 0;
-	_collision_h2		= 0;
-	_collision_v		= 0;
 	_color_def			= 0;
 	_color_off			= 0;
 	_color_on			= 0;
@@ -50,11 +47,6 @@ void Ledsegment::setColorOff(uint8_t c_index) {
 void Ledsegment::setColorOn(uint8_t c_index) {
 	_color_on 	= c_index;
 }
-void Ledsegment::setCollision(uint8_t col_h1, uint8_t col_h2, uint8_t col_v) {
-	_collision_h1	= col_h1;
-	_collision_h2	= col_h2;
-	_collision_v	= col_v;
-}
 // Led Segment Reset
 void Ledsegment::reset() {
 	_dir 		= false;
@@ -63,14 +55,14 @@ void Ledsegment::reset() {
 }
 // Led segment set to default with Color-Index
 void Ledsegment::showRange(uint8_t c_index) {
-	led_stripe[_ddb].setRGB(color_[c_index][0], color_[c_index][1], color_[c_index][2]);
-	led_stripe[_ddb].setRange(_begin, _begin + _num - 1);
+	ddb_leds[_ddb].setRGB(color_[c_index][0], color_[c_index][1], color_[c_index][2]);
+	ddb_leds[_ddb].setRange(_begin, _begin + _num - 1);
 	//led_stripe[_ddb].show();
 }
 // Led segment color on position with Color-Index
 void Ledsegment::showPosition(uint8_t c_index) {
-	led_stripe[_ddb].setRGB(color_[c_index][0], color_[c_index][1], color_[c_index][2]);
-	led_stripe[_ddb].setLED(_begin + _pos);
+	ddb_leds[_ddb].setRGB(color_[c_index][0], color_[c_index][1], color_[c_index][2]);
+	ddb_leds[_ddb].setLED(_begin + _pos);
 	//led_stripe[_ddb].show();
 }
 void Ledsegment::start() {
