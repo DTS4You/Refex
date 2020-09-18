@@ -51,8 +51,6 @@ DDBooster ddb_leds[DDB_COUNT];			// Objekt anlegen
 RBD::Timer io_task;
 RBD::Timer button_blink;
 RBD::Timer animation_timer;
-RBD::Timer sequence_timer;
-RBD::Timer new_scrap_part_timer;
 
 // Button Objekte anlegen
 RBD::ButtonExtern button_1(0);
@@ -99,10 +97,6 @@ void setup() {
 	button_blink.restart();
 	animation_timer.setTimeout(ANIMATION_TIME);
 	animation_timer.restart();
-	sequence_timer.setTimeout(SEQUENCE_TIME);
-	sequence_timer.stop();
-	new_scrap_part_timer.setTimeout(NEW_PART_DELAY);
-	new_scrap_part_timer.stop();
 
 	led_setup();
 	// collision_setup();
@@ -147,15 +141,6 @@ void loop() {
 		}
  	}
 	//---------------------------------------------------------------------------
-	// User Funktionen
-	//---------------------------------------------------------------------------
-	if(sequence_timer.onRestart()) {
-		if(animation_state > 0) {
-			animation_state++;
-			//animation_seq();
-		}
- 	}
-	//---------------------------------------------------------------------------
 	// Tasten abfragen
 	//---------------------------------------------------------------------------
 	// Taste 1 ist betätiget worden
@@ -166,7 +151,7 @@ void loop() {
 		if(animation_state == 0) {
 			animation_state = 1;
 			//animation_seq();
-			sequence_timer.restart();
+			animation_timer.restart();
 		}
 	}
 	//-------------------------------------------------------------------------
