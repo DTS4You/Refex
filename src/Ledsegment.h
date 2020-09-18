@@ -22,6 +22,7 @@ class Ledsegment
 		void setRunRight();
 		void setRunToggleOn();
 		uint8_t getPosition();
+		bool isEndposition();
 
     protected:
 
