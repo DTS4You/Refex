@@ -18,4 +18,8 @@ void animation_step() {
 	if(animation_state == 1) {
 		stripe[0].stepUp();
 	}
+	if(stripe[0].stepUp()) {
+		stripe[0].stop();
+		animation_state = 0;
+	}
 }
