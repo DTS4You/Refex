@@ -2,5 +2,14 @@
 ### Dokumentation                                                           ###
 ###############################################################################
 
+- Ausgehend Staus 0
+- Durch betätigen des Tasters startet die Animation
+-> Status 1
+- Nach der letzten LED, Zustand wird zurückgesetzt
+-> Status 0
+
+Status 0 -> LED-Ring statisch "an"
+Status 1 -> LED-Ring blinken "300ms an / aus"
+
 
  

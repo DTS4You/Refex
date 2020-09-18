@@ -7,8 +7,8 @@
 // ### Änderung			: keine													###
 // ###																			###
 // ### Hardware			: Arduino Nano											###
-// ###					: Leiterplatte 17-0023-02 und 17-0027-02				###
-// ###					: 8 x Digi-Dot-Booster									###
+// ###					: Leiterplatte 17-0023-02								###
+// ###					: 1 x Digi-Dot-Booster									###
 // ###					: 1 x Taster mit LED Ring								###
 // ################################################################################
 
