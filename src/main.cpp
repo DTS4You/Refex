@@ -149,6 +149,7 @@ void loop() {
 		state_value		= state_value   |  ( 1 << 0 );
 		// Nur wenn keine Animation mehr läuft kann neu gestartet werden
 		if(animation_state == 0) {
+			stripe[0].start();
 			animation_state = 1;
 			//animation_seq();
 			animation_timer.restart();
