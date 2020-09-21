@@ -17,14 +17,14 @@ extern uint8_t state_value;
 void animation_step() {
 	if(animation_state == 1) {
 		// Debug on COM
-		#ifdef DEBUG_COM
+		#ifdef COMOUT
 			Serial.println("Animation_State==1 -> Step");
 		#endif
 		stripe.stepUp();
 	}
 	if(stripe.isEndposition()) {
 		// Debug on COM
-		#ifdef DEBUG_COM
+		#ifdef COMOUT
 			Serial.println("Animation_State==0 -> Stop !!!");
 		#endif
 		stripe.stop();
