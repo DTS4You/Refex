@@ -14,7 +14,7 @@
 
 // #define DEBUG_LED
 // #define DEBUG_STRIPE
-// #define DEBUG_COM
+#define DEBUG_COM
 
 #include <arduino.h>
 // #include "ascii_codes.h"
