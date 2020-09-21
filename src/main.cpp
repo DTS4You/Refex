@@ -13,7 +13,7 @@
 // ################################################################################
 
 // #define DEBUG_LED
-// #define DEBUG_STRIPE
+#define DEBUG_STRIPE
 #define DEBUG_COM
 
 #include <arduino.h>

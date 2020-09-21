@@ -17,8 +17,8 @@
 #else
 
 // Debug Aufbau
-#define STRIPE_1_DDB        0
-#define STRIPE_1_START      0
-#define STRIPE_1_NUMBER     16           // Test
+#define STRIPE_01_DDB        0
+#define STRIPE_01_START      0
+#define STRIPE_01_NUMBER     16           // Test
 
 #endif
