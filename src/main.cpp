@@ -14,7 +14,7 @@
 
 // #define DEBUG_LED
 // #define DEBUG_STRIPE
-#define DEBUG_COM
+// #define DEBUG_COM
 
 #include <arduino.h>
 // #include "ascii_codes.h"
@@ -57,7 +57,7 @@ RBD::Timer animation_timer;
 RBD::ButtonExtern button_1(0);
 
 // LED Segmente Objekte anlegen
-Ledsegment stripe[1];
+Ledsegment stripe;
 
 // ----------------------------------------------------------------------------
 // Setup
@@ -158,28 +158,17 @@ void loop() {
 	if(button_1.onPressed()) {
 		// Debug on COM
 		#ifdef DEBUG_COM
-		Serial.println("Taste gedrückt");
+			Serial.println("Taste gedrückt");
 		#endif
 		global_output	= global_output & ~( 1 << 0 );
 		state_value		= state_value   |  ( 1 << 0 );
 		// Nur wenn keine Animation mehr läuft kann neu gestartet werden
 		if(animation_state == 0) {
-			stripe[0].start();
-			animation_state = 1;
-			//animation_seq();
-			animation_timer.restart();
-		}
-	}
-	if(animation_state == 0) {
-		// Debug on COM
-		#ifdef DEBUG_COM
-		Serial.println("Debug start !!!");
-		#endif
-		global_output	= global_output & ~( 1 << 0 );
-		state_value		= state_value   |  ( 1 << 0 );
-		// Nur wenn keine Animation mehr läuft kann neu gestartet werden
-		if(animation_state == 0) {
-			stripe[0].start();
+			// Debug on COM
+			#ifdef DEBUG_COM
+				Serial.println("Taste gedrückt -> Animation_State = 0");
+			#endif
+			stripe.start();
 			animation_state = 1;
 			//animation_seq();
 			animation_timer.restart();

@@ -90,9 +90,9 @@ void Ledsegment::setRunToggleOn() {
 bool Ledsegment::stepUp() {
 	if(_enable) {
 		showRange(_color_def);
-		if (_end_of_run == true) {
+		if (!_end_of_run) {
 			_step 		= 0;
-			_end_of_run	= false;
+			_end_of_run	= true;
 		}
 		if (_step < _num  ) {
 			if (!_dir) {
@@ -107,16 +107,16 @@ bool Ledsegment::stepUp() {
 			if(_toggle) {
 				_dir = !_dir;
 			}
-			_end_of_run = true;
+			_end_of_run = false;
 		}
 	}
 	return _end_of_run;
 }
-
+// Led Segment get Position
 uint8_t Ledsegment::getPosition() {
 	return _step;
 }
 
 bool Ledsegment::isEndposition() {
-	return _end_of_run;
+	return !_end_of_run;
 }

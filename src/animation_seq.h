@@ -4,7 +4,7 @@
 #include "stripe_init.h"
 
 
-extern class Ledsegment stripe[];
+extern class Ledsegment stripe;
 extern class RBD::Timer sequence_timer; 
 extern uint8_t animation_state;
 extern bool anim_flag;
@@ -16,10 +16,22 @@ extern uint8_t state_value;
 // Alles einen Schritt weiter
 void animation_step() {
 	if(animation_state == 1) {
-		stripe[0].stepUp();
+		// Debug on COM
+		#ifdef DEBUG_COM
+			Serial.println("Animation_State==1 -> Step");
+		#endif
+		stripe.stepUp();
 	}
-	if(stripe[0].isEndposition()) {
-		stripe[0].stop();
+	if(stripe.isEndposition()) {
+		// Debug on COM
+		#ifdef DEBUG_COM
+			Serial.println("Animation_State==0 -> Stop !!!");
+		#endif
+		stripe.stop();
 		animation_state = 0;
+		
+		global_output	= global_output |  ( 1 << 0 );
+		state_value		= state_value   & ~( 1 << 0 );
+
 	}
 }
