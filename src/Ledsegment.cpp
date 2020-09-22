@@ -34,6 +34,7 @@ void Ledsegment::setup(uint8_t ddb, uint8_t begin, uint8_t number) {
 	_ddb		= ddb;
 	_begin 		= begin;
 	_num		= number;
+	_end_of_run = false;
 }
 // Led Segment set color def
 void Ledsegment::setColorDef(uint8_t c_index) {
@@ -57,6 +58,7 @@ void Ledsegment::reset() {
 void Ledsegment::showRange(uint8_t c_index) {
 	ddb_leds[_ddb].setRGB(color_[c_index][0], color_[c_index][1], color_[c_index][2]);
 	ddb_leds[_ddb].setRange(_begin, _begin + _num - 1);
+	delay(DDB_CMD_DELAY);
 	//led_stripe[_ddb].show();
 }
 // Led segment color on position with Color-Index

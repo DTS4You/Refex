@@ -12,7 +12,7 @@
 // 1. DDB-Modul 
 #define STRIPE_01_DDB       0
 #define STRIPE_01_START     0
-#define STRIPE_01_NUM       100  
+#define STRIPE_01_NUM       200  
 
 #else
 

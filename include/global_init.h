@@ -32,7 +32,8 @@
 #define DDB_7_CS_PIN        8       // Chip Select Pin DDB 7
 #define DDB_8_CS_PIN        9       // Chip Select Pin DDB 8
 
-#define DDB_INIT_DELAY		5		// DDB Befehlsverzögerung
+#define DDB_INIT_DELAY		2		// DDB Initialisierungsverzögerung in ms (Min. 2 ms)
+#define DDB_CMD_DELAY       2       // DDB Befehlsverzögerung in ms (Min. 2ms)
 
 #define ARDUINOLED			13    	// Arduino LED on board
 

@@ -13,7 +13,7 @@
 // ################################################################################
 
 // #define DEBUG_STRIPE
-#define COMOUT
+// #define DEBUG_COM
 
 #include <arduino.h>
 // #include "ascii_codes.h"
@@ -64,7 +64,7 @@ Ledsegment stripe;
 void setup() {
 
 	// Debug on COM
-	#ifdef COMOUT
+	#ifdef DEBUG_COM
 		Serial.begin(115200); 		// open the serial port at 9600 bps:
 	#endif
 
@@ -112,7 +112,7 @@ void setup() {
 	global_output = 0xFF;
 
 	// Debug on COM
-	#ifdef COMOUT
+	#ifdef DEBUG_COM
 		Serial.println("Start");
 	#endif
 }
@@ -156,7 +156,7 @@ void loop() {
 	// Taste 1 ist betätiget worden
 	if(button_1.onPressed()) {
 		// Debug on COM
-		#ifdef COMOUT
+		#ifdef DEBUG_COM
 			Serial.println("Taste gedrückt");
 		#endif
 		global_output	= global_output & ~( 1 << 0 );
@@ -164,7 +164,7 @@ void loop() {
 		// Nur wenn keine Animation mehr läuft kann neu gestartet werden
 		if(animation_state == 0) {
 			// Debug on COM
-			#ifdef COMOUT
+			#ifdef DEBUG_COM
 				Serial.println("Taste gedrückt -> Animation_State = 0");
 			#endif
 			stripe.start();
