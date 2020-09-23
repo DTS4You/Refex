@@ -38,14 +38,14 @@
 #define ARDUINOLED			13    	// Arduino LED on board
 
 // LEDs am DDB-Modul
-#define DDB_1_MAX_LED      240      // Anzahl der LEDs am DDB 1
-#define DDB_2_MAX_LED      240      // Anzahl der LEDs am DDB 2
-#define DDB_3_MAX_LED      240      // Anzahl der LEDs am DDB 3
-#define DDB_4_MAX_LED      240      // Anzahl der LEDs am DDB 4
-#define DDB_5_MAX_LED      240      // Anzahl der LEDs am DDB 5
-#define DDB_6_MAX_LED      240      // Anzahl der LEDs am DDB 6
-#define DDB_7_MAX_LED      200      // Anzahl der LEDs am DDB 7
-#define DDB_8_MAX_LED      200      // Anzahl der LEDs am DDB 8
+#define DDB_1_MAX_LED      248      // Anzahl der LEDs am DDB 1
+#define DDB_2_MAX_LED      248      // Anzahl der LEDs am DDB 2
+#define DDB_3_MAX_LED      248      // Anzahl der LEDs am DDB 3
+#define DDB_4_MAX_LED      248      // Anzahl der LEDs am DDB 4
+#define DDB_5_MAX_LED      248      // Anzahl der LEDs am DDB 5
+#define DDB_6_MAX_LED      248      // Anzahl der LEDs am DDB 6
+#define DDB_7_MAX_LED      248      // Anzahl der LEDs am DDB 7
+#define DDB_8_MAX_LED      248      // Anzahl der LEDs am DDB 8
 
 // MCP23017 I2C Adresse
 #define MCP23017            0x20    // 1. MCP23017 Adresse
