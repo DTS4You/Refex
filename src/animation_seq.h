@@ -18,20 +18,21 @@ void animation_step() {
 	if(animation_state == 1) {
 		// Debug on COM
 		#ifdef DEBUG_COM
-			Serial.println("Animation_State==1 -> Step");
+			Serial.println("Animation_State = 1 -> Step");
 		#endif
 		stripe.stepUp();
 	}
 	if(stripe.isEndposition()) {
 		// Debug on COM
 		#ifdef DEBUG_COM
-			Serial.println("Animation_State==0 -> Stop !!!");
+			Serial.println("Animation_State = 0 -> Stop !!!");
 		#endif
 		stripe.stop();
-		animation_state = 0;
+		stripe.start();
+		animation_state = 1;
 		
-		global_output	= global_output |  ( 1 << 0 );
-		state_value		= state_value   & ~( 1 << 0 );
+		//global_output	= global_output |  ( 1 << 0 );
+		//state_value		= state_value   & ~( 1 << 0 );
 
 	}
 }

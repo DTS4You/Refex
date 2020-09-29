@@ -4,6 +4,7 @@
 #ifndef GLOBAL_INIT_H
 #define GLOBAL_INIT_H
 
+// #define DDB_EXP_BOARD
 
 #define EIN             	HIGH
 #define AUS             	LOW
@@ -22,7 +23,9 @@
 // Anzahl der DDB-Module
 #define DDB_COUNT           1       // Anzahl der DigiDotBooster Module
 
-// CS-Pin der DDB-Module
+// DDB-Module -> Chip-Select Pins
+#ifdef DDB_EXP_BOARD
+// CS-Pin der DDB-Module auf dem Expansions-Board
 #define DDB_1_CS_PIN        2       // Chip Select Pin DDB 1
 #define DDB_2_CS_PIN        3       // Chip Select Pin DDB 2
 #define DDB_3_CS_PIN        4       // Chip Select Pin DDB 3
@@ -31,21 +34,24 @@
 #define DDB_6_CS_PIN        7       // Chip Select Pin DDB 6
 #define DDB_7_CS_PIN        8       // Chip Select Pin DDB 7
 #define DDB_8_CS_PIN        9       // Chip Select Pin DDB 8
+#else
+#define DDB_1_CS_PIN        10       //Chip Select Pin DDB 1
+#endif
 
-#define DDB_INIT_DELAY		2		// DDB Initialisierungsverzögerung in ms (Min. 2 ms)
-#define DDB_CMD_DELAY       2       // DDB Befehlsverzögerung in ms (Min. 2ms)
+#define DDB_INIT_DELAY		5		// DDB Initialisierungsverzögerung in ms (Min. 2 ms)
+#define DDB_CMD_DELAY       5       // DDB Befehlsverzögerung in ms (Min. 2ms)
 
 #define ARDUINOLED			13    	// Arduino LED on board
 
 // LEDs am DDB-Modul
-#define DDB_1_MAX_LED      248      // Anzahl der LEDs am DDB 1
-#define DDB_2_MAX_LED      248      // Anzahl der LEDs am DDB 2
-#define DDB_3_MAX_LED      248      // Anzahl der LEDs am DDB 3
-#define DDB_4_MAX_LED      248      // Anzahl der LEDs am DDB 4
-#define DDB_5_MAX_LED      248      // Anzahl der LEDs am DDB 5
-#define DDB_6_MAX_LED      248      // Anzahl der LEDs am DDB 6
-#define DDB_7_MAX_LED      248      // Anzahl der LEDs am DDB 7
-#define DDB_8_MAX_LED      248      // Anzahl der LEDs am DDB 8
+#define DDB_1_MAX_LED      110      // Anzahl der LEDs am DDB 1
+#define DDB_2_MAX_LED      110      // Anzahl der LEDs am DDB 2
+#define DDB_3_MAX_LED      110      // Anzahl der LEDs am DDB 3
+#define DDB_4_MAX_LED      110      // Anzahl der LEDs am DDB 4
+#define DDB_5_MAX_LED      110      // Anzahl der LEDs am DDB 5
+#define DDB_6_MAX_LED      110      // Anzahl der LEDs am DDB 6
+#define DDB_7_MAX_LED      110      // Anzahl der LEDs am DDB 7
+#define DDB_8_MAX_LED      110      // Anzahl der LEDs am DDB 8
 
 // MCP23017 I2C Adresse
 #define MCP23017            0x20    // 1. MCP23017 Adresse

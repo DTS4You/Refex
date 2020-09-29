@@ -1,8 +1,8 @@
 // ################################################################################
 // ###                                                                          ###
 // ### Projekt			: Refex 												###
-// ### Version			: 0.21													###
-// ### Datum			: 17.09.2020											###
+// ### Version			: 0.90													###
+// ### Datum			: 29.09.2020											###
 // ###                                                                          ###
 // ### Änderung			: keine													###
 // ###																			###
@@ -162,7 +162,7 @@ void loop() {
 		global_output	= global_output & ~( 1 << 0 );
 		state_value		= state_value   |  ( 1 << 0 );
 		// Nur wenn keine Animation mehr läuft kann neu gestartet werden
-		if(animation_state == 0) {
+		if(animation_state < 1) {
 			// Debug on COM
 			#ifdef DEBUG_COM
 				Serial.println("Taste gedrückt -> Animation_State = 0");
@@ -171,6 +171,13 @@ void loop() {
 			animation_state = 1;
 			//animation_seq();
 			animation_timer.restart();
+		} else {
+			stripe.stop();
+			ddb_refresh = true;
+			animation_state = 0;
+		
+			global_output	= global_output |  ( 1 << 0 );
+			state_value		= state_value   & ~( 1 << 0 );
 		}
 	}
 	//-------------------------------------------------------------------------

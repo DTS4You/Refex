@@ -64,7 +64,13 @@ void Ledsegment::showRange(uint8_t c_index) {
 // Led segment color on position with Color-Index
 void Ledsegment::showPosition(uint8_t c_index) {
 	ddb_leds[_ddb].setRGB(color_[c_index][0], color_[c_index][1], color_[c_index][2]);
-	ddb_leds[_ddb].setLED(_begin + _pos);
+	//ddb_leds[_ddb].setLED(_begin + _pos);
+	if(_pos < 1) {
+		ddb_leds[_ddb].setLED(_begin + _pos);
+	} else {
+		ddb_leds[_ddb].setRange(_begin + _pos - 1, _begin + _pos);
+	}
+	
 	//led_stripe[_ddb].show();
 }
 void Ledsegment::start() {
